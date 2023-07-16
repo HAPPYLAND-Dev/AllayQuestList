@@ -30,6 +30,9 @@ class QuestGuiTest {
     void setUp() {
         server = MockBukkit.mock();
         plug = MockBukkit.load(PluginTester.class);
+
+        getServer().getLogger().info("Testing ....");
+        getServer().addPlayer("Tester1");
     }
 
     @AfterEach
@@ -39,10 +42,6 @@ class QuestGuiTest {
 
     @Test
     void onTest() {
-        getServer().getLogger().info("Testing ....");
-
-        getServer().addPlayer("Tester1");
-
         UUID uid = getServer().getPlayer(0).getUniqueId();
 
         QuestGui gui = new QuestGui(uid, new QuestQuery() {
