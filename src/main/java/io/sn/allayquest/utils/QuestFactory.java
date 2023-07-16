@@ -17,6 +17,11 @@ public class QuestFactory {
             public QuestStatus getStatus() {
                 return status;
             }
+
+            @Override
+            public String toString() {
+                return String.format("[%s] %s", getStatus().toString(), getIcon().toString());
+            }
         };
     }
 
